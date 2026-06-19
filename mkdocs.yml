@@ -1,0 +1,55 @@
+site_name: "geovannycode · SDD con Kotlin, Spring Boot y Vaadin"
+site_description: "Taller: del papel al feature sin salir del JVM"
+site_author: "Geovanny Mendoza"
+site_url: "https://geovannymcode.github.io/sdd-kotlin-vaadin/"
+
+repo_name: "/geovannymcode/sdd-kotlin-vaadin"
+repo_url: "https://github.com/geovannymcode/sdd-kotlin-vaadin"
+
+copyright: "Copyright &copy; 2026 Geovanny Mendoza"
+
+theme:
+  name: material
+  palette:
+    - scheme: slate
+      primary: deep orange
+      accent: cyan
+  features:
+    - content.code.copy
+    - content.code.annotate
+    - navigation.tracking
+    - navigation.top
+
+nav:
+  - Inicio: index.md
+  - "Fase 0 · El andamio y el .claude": 01-setup.md
+  - "Fase 1 · La especificación (/spec)": 02-spec.md
+  - "Fase 2 · El plan (/plan)": 03-plan.md
+  - "Fase 3 · El backend (/build T-001 a T-003)": 04-build-backend.md
+  - "Fase 4 · La UI en Vaadin (/build T-004 a T-006)": 05-build-vaadin.md
+  - "Fase 5 · Validar y correr (/validate, /review)": 06-validate.md
+  - Referencias: referencias.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: "https://github.com/geovannymcode"
+    - icon: fontawesome/brands/linkedin
+      link: "https://www.linkedin.com/in/geovannycode/"
+
+markdown_extensions:
+  - codehilite
+  - tables
+  - admonition
+  - pymdownx.details
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:pymdownx.emoji.twemoji
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
