@@ -6,7 +6,7 @@ Promptear sirve para explorar. Le pides algo a la IA, te tira código, y para ta
 
 Spec-Driven Development resuelve eso: en vez de que la intención viva en un chat que mañana cierras, vive en un archivo dentro del repo. Una especificación, versionada al lado del código. Y un agente que la sigue, paso a paso, sin inventar.
 
-La idea no es nueva. Lo nuevo acá es el stack. Casi todos los ejemplos de SDD son Java con Angular o React. En este taller lo hacemos con **Kotlin, Spring Boot y Vaadin**. Construimos el mismo  un feature para crear un cliente, pero todo en la JVM. Sin JavaScript. Sin framework de frontend aparte.
+La idea no es nueva. Lo nuevo acá es el stack. Casi todos los ejemplos de SDD son Java con Angular o React. En este taller lo hacemos con **Kotlin, Spring Boot y Vaadin**. Construimos un feature para crear un cliente, pero todo en la JVM. Sin JavaScript. Sin framework de frontend aparte.
 
 ## **Lo que vas a hacer, no a leer**
 
