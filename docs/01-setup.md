@@ -6,7 +6,7 @@ Antes de la primera spec, el repo tiene que hablar el mismo idioma que el flujo.
 
 ## **1. El andamio, desde Spring Initializr**
 
-Genera el proyecto base en [**start.spring.io**](https://start.spring.io){:target="_blank"}. Un solo proyecto, no dos. Esta es una diferencia con el ejemplo original: como Vaadin corre en la misma JVM que el backend, no hay app de frontend aparte.
+Genera el proyecto base en [**start.spring.io**](https://start.spring.io){:target="_blank"}. Un solo proyecto.
 
 Configúralo así:
 
@@ -23,7 +23,7 @@ Descárgalo, ábrelo en IntelliJ y arráncalo una vez para confirmar que vive.
 
 ## **2. El `.claude`, el cerebro del flujo**
 
-Acá está la pieza que vuelve esto spec-driven. Copia la carpeta `.claude` a la raíz del proyecto. Es el framework de Loiane, traducido a este stack: Kotlin, Vaadin y arquitectura en capas, en vez de Java y Angular.
+Acá está la pieza que vuelve esto spec-driven. Copia la carpeta `.claude` a la raíz del proyecto. Agrega el stack: Kotlin, Vaadin y arquitectura en capas.
 
 Esto es lo que trae, y vale la pena que lo abras y lo mires:
 
@@ -44,7 +44,7 @@ Esto es lo que trae, y vale la pena que lo abras y lo mires:
  └── README.md         # el orden de los comandos
 ```
 
-Con plastilina: cada archivo de `commands/` es una receta. Cuando escribes `/spec` en Claude Code, el agente abre `commands/spec.md` y sigue esa receta. No es magia ni un prompt secreto, es un instructivo que tú puedes leer y cambiar.
+Cada archivo de `commands/` es una receta. Cuando escribes `/spec` en Claude Code, el agente abre `commands/spec.md` y sigue esa receta. No es magia ni un prompt secreto, es un instructivo que tú puedes leer y cambiar.
 
 Y eso es lo bonito: si mañana tu equipo tiene otra convención, abres el archivo del comando y lo ajustas. El proceso vive con el código, no en la cabeza de alguien.
 
