@@ -4,7 +4,7 @@
 
 Acá empieza lo spec-driven. La primera cosa que producimos no es código, es la especificación. El comando `/spec` toma la descripción del feature y la convierte en un documento estructurado: qué debe hacer, qué queda fuera, y qué falta por decidir.
 
-Con plastilina: una spec es como acordar el precio antes de facturarle a un cliente. El sistema cobra igual, pero la conversación de "¿cuánto era?" llega después, y siempre llega cara. En software el costo se esconde mejor, pero está ahí.
+Una spec es como acordar el precio antes de facturarle a un cliente. El sistema cobra igual, pero la conversación de "¿cuánto era?" llega después, y siempre llega cara. En software el costo se esconde mejor, pero está ahí.
 
 ## **1. Correr `/spec`**
 
