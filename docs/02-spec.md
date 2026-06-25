@@ -80,7 +80,7 @@ Hallazgo (advisory, no bloquea):
   Como ambos quedaron definidos en Q-001 y Q-003, no bloquea el plan.
 ```
 
-Con plastilina: el review es el segundo par de ojos antes de construir. Si la spec no aguanta la lista, el momento de arreglarla es ahora, no cuando ya hay código encima.
+El review es el segundo par de ojos antes de construir. Si la spec no aguanta la lista, el momento de arreglarla es ahora, no cuando ya hay código encima.
 
 !!! warning "Si el veredicto es FAIL"
     No avances. El review te lista qué resolver. Casi siempre es una pregunta abierta que quedó a medias o un criterio que no es verificable. Lo arreglas en la spec y vuelves a correr `/spec-review`.
