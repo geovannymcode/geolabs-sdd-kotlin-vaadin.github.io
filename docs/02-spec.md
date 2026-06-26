@@ -18,7 +18,7 @@ mostrando errores antes de guardar
 El agente escribe la spec en su carpeta:
 
 ```bash
-.specs/2026-05-09-create-new-customer/
+.specs/2026-07-09-create-new-customer/
  └── 01-spec.md
 ```
 
@@ -67,7 +67,7 @@ mayusculas; Q-003 notificacion de Vaadin; Q-004 fuera de alcance; Q-005 de servi
 Una spec solo sirve si es clara. El comando `/spec-review` la audita contra una lista: objetivo en términos de usuario, criterios atómicos y verificables, non-goals explícitos, preguntas resueltas.
 
 ```bash title="Claude Code"
-/spec-review 2026-05-09-create-new-customer
+/spec-review 2026-07-09-create-new-customer
 ```
 
 Escribe el resultado y te da un veredicto:
@@ -86,6 +86,6 @@ El review es el segundo par de ojos antes de construir. Si la spec no aguanta la
     No avances. El review te lista qué resolver. Casi siempre es una pregunta abierta que quedó a medias o un criterio que no es verificable. Lo arreglas en la spec y vuelves a correr `/spec-review`.
 
 !!! success "Checkpoint de la Fase 1"
-    `.specs/2026-05-09-create-new-customer/` con `01-spec.md` (sin preguntas pendientes) y `02-spec-review.md` con veredicto PASS. Con eso, la spec está lista para volverse un plan.
+    `.specs/2026-07-09-create-new-customer/` con `01-spec.md` (sin preguntas pendientes) y `02-spec-review.md` con veredicto PASS. Con eso, la spec está lista para volverse un plan.
 
 En la siguiente fase la partimos en tareas con `/plan`.
