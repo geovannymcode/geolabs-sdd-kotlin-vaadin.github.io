@@ -4,18 +4,18 @@
 
 Tenemos una spec aprobada. Ahora la volvemos ejecutable. El comando `/plan` la traduce a un diseño y la parte en tareas pequeñas, cada una atada a sus criterios y con forma de TDD.
 
-Con plastilina: pedirle a la IA que construya todo el feature de una es como pedirle a alguien que se trague una arepa entera de un bocado. Partirlo en tareas chiquitas es más fácil de revisar, y es donde alcanzas a cazar los errores antes de que se rieguen.
+Pedirle a la IA que construya todo el feature de una es como pedirle a alguien que se trague una arepa entera de un bocado. Partirlo en tareas chiquitas es más fácil de revisar, y es donde alcanzas a cazar los errores antes de que se rieguen.
 
 ## **1. Correr `/plan`**
 
 ```bash title="Claude Code"
-/plan 2026-05-09-create-new-customer
+/plan 2026-07-09-create-new-customer
 ```
 
 El agente lee la spec y el review, y escribe varios artefactos:
 
 ```bash
-.specs/2026-05-09-create-new-customer/
+.specs/2026-07-09-create-new-customer/
  ├── 03-design.md        # la arquitectura y el contrato
  ├── 04-tasks.md         # las tareas
  ├── 📁 adr/             # las decisiones registradas
@@ -59,7 +59,7 @@ Cada tarea sabe qué archivos toca, qué criterios cubre y cuál es su test. Y e
 
 ```json title=".tdd-state.json"
 {
-  "feature_id": "2026-05-09-create-new-customer",
+  "feature_id": "2026-07-09-create-new-customer",
   "active_task": null,
   "tasks": {
     "T-001": { "phase": "pending", "acs_covered": ["AC-008", "AC-011"], "depends_on": [] }
