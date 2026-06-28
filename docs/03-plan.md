@@ -34,7 +34,7 @@ com.geovannycode.sdd.customer
  └── 📁 internal/   # la bodega: la implementacion, escondida
 ```
 
-Con plastilina: la `api` es la vitrina de la tienda, el `internal` es la bodega. El cliente compra en la vitrina y nunca entra a la bodega. El día que cambies algo de la bodega, nadie afuera se rompe.
+La `api` es la vitrina de la tienda, el `internal` es la bodega. El cliente compra en la vitrina y nunca entra a la bodega. El día que cambies algo de la bodega, nadie afuera se rompe.
 
 !!! info "api / internal en Kotlin, un matiz que vale oro en la charla"
     En Java, los tipos de `internal` se esconden con package-private y lo refuerza el compilador. Kotlin no tiene package-private, así que el límite es una convención. ¿Cómo lo volvemos real? El plan registra un ADR que dice: lo convertimos en un test de ArchUnit. Una regla de arquitectura se vuelve un sensor del harness. No es debilidad de Kotlin, es ejemplo de por qué el harness importa.
