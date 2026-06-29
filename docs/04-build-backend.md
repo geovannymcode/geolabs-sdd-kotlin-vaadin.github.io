@@ -4,7 +4,7 @@
 
 Ahora construimos, una tarea a la vez. El comando `/build` toma una tarea y la lleva por el ciclo de TDD: rojo, verde, refactor. Tú no escribes el código, lo dirige la spec; tú revisas cada bocado.
 
-Con plastilina: en cada tarea, Claude primero escribe un test que falla (rojo), después el mínimo código para que pase (verde), y al final limpia sin romper nada (refactor). El test es el que manda.
+En cada tarea, Claude primero escribe un test que falla (rojo), después el mínimo código para que pase (verde), y al final limpia sin romper nada (refactor). El test es el que manda.
 
 !!! tip "Tu nombre va en el commit"
     La IA genera rápido, pero tú respondes por cada línea. Revisa cada tarea como si la hubieras escrito tú. "La IA lo hizo así" no es una respuesta válida en un code review. Por eso construimos en bocados: un diff chico se revisa de verdad.
