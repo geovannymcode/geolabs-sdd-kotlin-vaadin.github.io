@@ -32,7 +32,7 @@ La tabla de trazabilidad conecta cada criterio de aceptación con su test y con 
 | AC-008 | CustomerServiceTest, CustomerRepositoryIT, CustomerControllerTest | Customer, CustomerRepository, CustomerServiceImpl, CustomerController |
 | AC-011 | CustomerServiceTest, CustomerControllerTest, CustomerCreateViewTest | CustomerServiceImpl, CustomerExceptionHandler, CustomerCreateView |
 
-Con plastilina: es el hilo que conecta lo que pedimos, lo que probamos y lo que construimos. Si alguien pregunta si la regla del email único está cubierta, no abres el código, miras la tabla.
+Es el hilo que conecta lo que pedimos, lo que probamos y lo que construimos. Si alguien pregunta si la regla del email único está cubierta, no abres el código, miras la tabla.
 
 ## **3. `/review`, la auditoría final**
 
