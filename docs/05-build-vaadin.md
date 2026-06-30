@@ -4,7 +4,7 @@
 
 Acá está el corazón de la charla. La UI es una clase Kotlin con Vaadin Flow. Y como corre en la misma JVM que el backend, llama al `CustomerService` directo. No hay app de frontend aparte, ni build de JavaScript, ni servicio HTTP del lado del cliente.
 
-Con plastilina: en el ejemplo original con Angular, el frontend es una casa aparte que le grita al backend por la ventana. Con Vaadin, cocina y comedor están en la misma casa. La vista abre la puerta y le habla al servicio de frente.
+El frontend es una casa aparte que le grita al backend por la ventana. Con Vaadin, cocina y comedor están en la misma casa. La vista abre la puerta y le habla al servicio de frente.
 
 ## **1. `/build T-004`, el formulario**
 
@@ -48,7 +48,7 @@ class CustomerCreateView(private val customerService: CustomerService) : Vertica
 }
 ```
 
-Con plastilina: el binder es un cable que conecta cada casilla del formulario con un campo del modelo. Cubre AC-002 a AC-007.
+El binder es un cable que conecta cada casilla del formulario con un campo del modelo. Cubre AC-002 a AC-007.
 
 ## **3. `/build T-006`, conectar al servicio**
 
@@ -87,7 +87,7 @@ fun `AC-002 el boton arranca apagado y se enciende al ser valido`() {
 }
 ```
 
-Con plastilina: Karibu es un doble de riesgo del navegador. Hace todo lo que haría un usuario, pero en memoria. Por eso es rapidísimo.
+Karibu es un doble de riesgo del navegador. Hace todo lo que haría un usuario, pero en memoria. Por eso es rapidísimo.
 
 !!! warning "Si un `_get` no compila"
     Karibu va al día con Vaadin, y los matchers (`label`, `text`) cambian entre versiones. Confirma que tu Karibu corresponde a tu Vaadin 25. Es el test más sensible a versión del proyecto.
