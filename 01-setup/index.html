@@ -29,7 +29,7 @@
     
     
       
-        <title>Fase 0 · El andamio y el .claude - geovannycode · SDD con Kotlin, Spring Boot y Vaadin</title>
+        <title>Fase 0 · El andamio y el .claude - GeoLabs · SDD con Kotlin, Spring Boot y Vaadin</title>
       
     
     
@@ -96,7 +96,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="geovannycode · SDD con Kotlin, Spring Boot y Vaadin" class="md-header__button md-logo" aria-label="geovannycode · SDD con Kotlin, Spring Boot y Vaadin" data-md-component="logo">
+    <a href=".." title="GeoLabs · SDD con Kotlin, Spring Boot y Vaadin" class="md-header__button md-logo" aria-label="GeoLabs · SDD con Kotlin, Spring Boot y Vaadin" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -110,7 +110,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            geovannycode · SDD con Kotlin, Spring Boot y Vaadin
+            GeoLabs · SDD con Kotlin, Spring Boot y Vaadin
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -218,13 +218,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="geovannycode · SDD con Kotlin, Spring Boot y Vaadin" class="md-nav__button md-logo" aria-label="geovannycode · SDD con Kotlin, Spring Boot y Vaadin" data-md-component="logo">
+    <a href=".." title="GeoLabs · SDD con Kotlin, Spring Boot y Vaadin" class="md-nav__button md-logo" aria-label="GeoLabs · SDD con Kotlin, Spring Boot y Vaadin" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    geovannycode · SDD con Kotlin, Spring Boot y Vaadin
+    GeoLabs · SDD con Kotlin, Spring Boot y Vaadin
   </label>
   
     <div class="md-nav__source">
@@ -664,23 +664,23 @@
 <h2 id="que-vamos-a-hacer-y-por-que"><strong>¿Qué vamos a hacer y por qué?</strong></h2>
 <p>Antes de la primera spec, el repo tiene que hablar el mismo idioma que el flujo. Eso significa dos cosas: un andamio limpio y los comandos del flujo instalados. Sin eso, la IA puede generar código, pero no dentro de un proceso.</p>
 <h2 id="1-el-andamio-desde-spring-initializr"><strong>1. El andamio, desde Spring Initializr</strong></h2>
-<p>Genera el proyecto base en <a href="https://start.spring.io" target="_blank"><strong>start.spring.io</strong></a>. Un solo proyecto.</p>
+<p>Genera el proyecto base en <a href="https://start.spring.io" target="_blank"><strong>start.spring.io</strong></a>. Un solo proyecto, no dos. Como Vaadin corre en la misma JVM que el backend, no hay app de frontend aparte.</p>
 <p>Configúralo así:</p>
 <ul>
-<li>Project: <strong>Maven</strong>, Language: <strong>Kotlin</strong>, Spring Boot: <strong>4.1.x</strong>, Java: <strong>25</strong>.</li>
+<li>Project <strong>Maven</strong>, Language <strong>Kotlin</strong>, Spring Boot <strong>4.1.x</strong>, Java <strong>25</strong>, grupo <code>com.geovannycode</code>.</li>
 <li>Dependencias: <strong>Vaadin</strong>, <strong>Spring Web</strong>, <strong>Spring Data JPA</strong>, <strong>Validation</strong>, <strong>Flyway Migration</strong>, <strong>PostgreSQL Driver</strong>.</li>
 </ul>
 <p>Descárgalo, ábrelo en IntelliJ y arráncalo una vez para confirmar que vive.</p>
 <div class="admonition warning">
 <p class="admonition-title">El andamio no lo crea la IA</p>
-<p>Esto es importante. El andamio sale de Spring Initializr, nunca de un asistente. El modelo tiene un corte de conocimiento y te arma el proyecto con versiones viejas. La IA entra después, para specs, diseño y código. Generar el esqueleto es trabajo de la herramienta oficial.</p>
+<p>El andamio sale de Spring Initializr, nunca de un asistente. El modelo tiene un corte de conocimiento y te arma el proyecto con versiones viejas. La IA entra después, para specs, diseño y código.</p>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">Dos cambios de Spring Boot 4 que te van a morder</p>
-<p>El starter web ahora se llama <code>spring-boot-starter-webmvc</code>, no <code>-web</code>. Y Flyway necesita <code>spring-boot-starter-flyway</code> más <code>flyway-database-postgresql</code>. Si Initializr te los dejó como en Boot 3, los ajustas. El comando <code>/wire-harness</code> lo revisa por ti más adelante.</p>
+<p class="admonition-title">Cambios de Spring Boot 4 que te van a morder</p>
+<p>El starter web ahora se llama <code>spring-boot-starter-webmvc</code>, no <code>-web</code>. Flyway va con <code>spring-boot-starter-flyway</code> más <code>flyway-database-postgresql</code>. Y en Boot 4 los starters de test están separados: <code>spring-boot-starter-webmvc-test</code>, <code>spring-boot-starter-data-jpa-test</code>, <code>spring-boot-starter-flyway-test</code>. El comando <code>/wire-harness</code> lo revisa por ti.</p>
 </div>
 <h2 id="2-el-claude-el-cerebro-del-flujo"><strong>2. El <code>.claude</code>, el cerebro del flujo</strong></h2>
-<p>Acá está la pieza que vuelve esto spec-driven. Copia la carpeta <code>.claude</code> a la raíz del proyecto. Agrega el stack: Kotlin, Vaadin y arquitectura en capas.</p>
+<p>Copia la carpeta <code>.claude</code> a la raíz del proyecto. Son los comandos que armamos para este flujo, afinados a nuestro stack: Kotlin, Vaadin y arquitectura en capas.</p>
 <p>Esto es lo que trae, y vale la pena que lo abras y lo mires:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>.claude/
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w"> </span>├──<span class="w"> </span>📁<span class="w"> </span>commands/<span class="w">      </span><span class="c1"># los comandos slash que vas a correr</span>
@@ -697,13 +697,13 @@
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w"> </span>├──<span class="w"> </span>settings.json<span class="w">     </span><span class="c1"># permisos del agente</span>
 <a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w"> </span>└──<span class="w"> </span>README.md<span class="w">         </span><span class="c1"># el orden de los comandos</span>
 </code></pre></div>
-<p>Cada archivo de <code>commands/</code> es una receta. Cuando escribes <code>/spec</code> en Claude Code, el agente abre <code>commands/spec.md</code> y sigue esa receta. No es magia ni un prompt secreto, es un instructivo que tú puedes leer y cambiar.</p>
+<p>En simple: cada archivo de <code>commands/</code> es una receta. Cuando escribes <code>/spec</code> en Claude Code, el agente abre <code>commands/spec.md</code> y sigue esa receta. No es magia ni un prompt secreto, es un instructivo que tú puedes leer y cambiar.</p>
 <p>Y eso es lo bonito: si mañana tu equipo tiene otra convención, abres el archivo del comando y lo ajustas. El proceso vive con el código, no en la cabeza de alguien.</p>
 <div class="admonition info">
 <p class="admonition-title">Por qué los comandos están afinados a tu stack</p>
-<p>Cada receta ya sabe que tu stack es Kotlin con Vaadin y arquitectura en capas, no Java con Angular ni hexagonal. Por eso el <code>/build</code> te genera una entidad JPA simple y un servicio con su interfaz e implementación, sin value objects ni puertos de por medio.</p>
+<p>Cada receta sabe que tu stack es Kotlin con Vaadin y arquitectura en capas, no Java con Angular ni hexagonal. Por eso el <code>/build</code> te genera una entidad JPA simple y un servicio con su interfaz e implementación, sin value objects ni puertos de por medio.</p>
 </div>
-<p>Abre el proyecto con Claude Code. En la barra de comandos, al escribir <code>/</code>, deberías ver aparecer los ocho comandos. Si los ves, el <code>.claude</code> quedó bien instalado.</p>
+<p>Abre el proyecto con Claude Code. Al escribir <code>/</code>, deberías ver aparecer los ocho comandos. Si los ves, el <code>.claude</code> quedó bien instalado.</p>
 <h2 id="3-onboard-clasificar-el-terreno"><strong>3. <code>/onboard</code>, clasificar el terreno</strong></h2>
 <p>El primer comando inspecciona el proyecto y lo clasifica. No construye nada todavía.</p>
 <div class="highlight"><span class="filename">Claude Code</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/onboard
@@ -717,34 +717,31 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Clasificacion: GREENFIELD. Solo el andamio de Spring Boot + Vaadin.
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Stack:
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  Kotlin 2.3 · Java 25 · Spring Boot 4.1 · Vaadin 25 · PostgreSQL 17 · Maven
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  Kotlin 2.3.21 · Java 25 · Spring Boot 4.1.0 · Vaadin 25.2.0 · PostgreSQL 17
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>Huecos a resolver antes de construir:
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>  1. Migracion: Flyway por cablear
 <a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>  2. Tests de integracion: falta Testcontainers
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>  3. Test de la UI: falta Karibu
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>  3. Test de la UI: falta Karibu (v24)
 <a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>  4. Guardrail: falta ArchUnit para el limite api/internal
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>Siguiente: /wire-harness
 </code></pre></div>
-<p>Con plastilina: <code>/onboard</code> es el maestro de obra que llega al lote, mira qué hay y te dice qué falta antes de empezar a construir.</p>
+<p>En simple: <code>/onboard</code> es el maestro de obra que llega al lote, mira qué hay y te dice qué falta antes de empezar a construir.</p>
 <h2 id="4-wire-harness-armar-las-barandas"><strong>4. <code>/wire-harness</code>, armar las barandas</strong></h2>
 <p>Este comando arma el harness: las dependencias y la configuración que después van a frenar el código que no cumple.</p>
 <div class="highlight"><span class="filename">Claude Code</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>/wire-harness
 </code></pre></div>
-<p>Antes de tocar nada, hace un chequeo previo. Si falta una decisión, se detiene y pregunta en vez de asumir. Por ejemplo, si hay un driver de base pero no se eligió herramienta de migración, te lo pregunta y deja la decisión escrita en un ADR.</p>
-<p>Para este stack, deja cableado:</p>
+<p>Antes de tocar nada, hace un chequeo previo. Si falta una decisión, se detiene y pregunta en vez de asumir. Para este stack, deja cableado:</p>
 <ul>
 <li>Flyway con su starter de Boot 4 y el módulo de Postgres.</li>
-<li>El starter web correcto (<code>webmvc</code>).</li>
+<li>El starter web correcto (<code>webmvc</code>) y los starters de test de Boot 4.</li>
 <li>Testcontainers para los tests de integración.</li>
-<li>Karibu para testear la vista sin navegador.</li>
+<li>Karibu <code>karibu-testing-v24</code> (versión 2.7.0) para testear la vista sin navegador.</li>
 <li>ArchUnit para el guardrail del límite api/internal.</li>
 <li><code>ddl-auto: validate</code>, porque Flyway es el dueño del esquema.</li>
 </ul>
 <div class="admonition success">
 <p class="admonition-title">Checkpoint de la Fase 0</p>
-<p>Deberías tener: el proyecto que arranca, la carpeta <code>.claude</code> con los ocho comandos visibles en Claude Code, y <code>.specs/</code> con <code>_stack.json</code> y <code>_onboarding.md</code>. Las barandas quedaron cableadas. Ya puedes escribir la primera spec.</p>
+<p>Deberías tener: el proyecto que arranca, la carpeta <code>.claude</code> con los ocho comandos visibles en Claude Code, y <code>.specs/</code> con <code>_stack.json</code> y <code>_onboarding.md</code>. Las barandas quedaron cableadas.</p>
 </div>
 <p>En la siguiente fase escribimos la especificación con <code>/spec</code>.</p>
 

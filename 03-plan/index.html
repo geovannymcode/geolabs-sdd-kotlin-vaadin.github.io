@@ -29,7 +29,7 @@
     
     
       
-        <title>Fase 2 · El plan (/plan) - geovannycode · SDD con Kotlin, Spring Boot y Vaadin</title>
+        <title>Fase 2 · El plan (/plan) - GeoLabs · SDD con Kotlin, Spring Boot y Vaadin</title>
       
     
     
@@ -96,7 +96,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="geovannycode · SDD con Kotlin, Spring Boot y Vaadin" class="md-header__button md-logo" aria-label="geovannycode · SDD con Kotlin, Spring Boot y Vaadin" data-md-component="logo">
+    <a href=".." title="GeoLabs · SDD con Kotlin, Spring Boot y Vaadin" class="md-header__button md-logo" aria-label="GeoLabs · SDD con Kotlin, Spring Boot y Vaadin" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -110,7 +110,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            geovannycode · SDD con Kotlin, Spring Boot y Vaadin
+            GeoLabs · SDD con Kotlin, Spring Boot y Vaadin
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -218,13 +218,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="geovannycode · SDD con Kotlin, Spring Boot y Vaadin" class="md-nav__button md-logo" aria-label="geovannycode · SDD con Kotlin, Spring Boot y Vaadin" data-md-component="logo">
+    <a href=".." title="GeoLabs · SDD con Kotlin, Spring Boot y Vaadin" class="md-nav__button md-logo" aria-label="GeoLabs · SDD con Kotlin, Spring Boot y Vaadin" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    geovannycode · SDD con Kotlin, Spring Boot y Vaadin
+    GeoLabs · SDD con Kotlin, Spring Boot y Vaadin
   </label>
   
     <div class="md-nav__source">
@@ -641,26 +641,24 @@
 <h1 id="fase-2-el-plan-plan"><strong>Fase 2: El plan (<code>/plan</code>)</strong></h1>
 <h2 id="que-vamos-a-hacer-y-por-que"><strong>¿Qué vamos a hacer y por qué?</strong></h2>
 <p>Tenemos una spec aprobada. Ahora la volvemos ejecutable. El comando <code>/plan</code> la traduce a un diseño y la parte en tareas pequeñas, cada una atada a sus criterios y con forma de TDD.</p>
-<p>Pedirle a la IA que construya todo el feature de una es como pedirle a alguien que se trague una arepa entera de un bocado. Partirlo en tareas chiquitas es más fácil de revisar, y es donde alcanzas a cazar los errores antes de que se rieguen.</p>
+<p>En simple: pedirle a la IA que construya todo el feature de una es como pedirle a alguien que se trague una arepa entera de un bocado. Partirlo en tareas chiquitas es más fácil de revisar, y es donde alcanzas a cazar los errores antes de que se rieguen.</p>
 <h2 id="1-correr-plan"><strong>1. Correr <code>/plan</code></strong></h2>
-<div class="highlight"><span class="filename">Claude Code</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/plan<span class="w"> </span><span class="m">2026</span>-07-09-create-new-customer
+<div class="highlight"><span class="filename">Claude Code</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/plan<span class="w"> </span><span class="m">2026</span>-05-09-create-new-customer
 </code></pre></div>
 <p>El agente lee la spec y el review, y escribe varios artefactos:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>.specs/2026-07-09-create-new-customer/
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>.specs/2026-05-09-create-new-customer/
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w"> </span>├──<span class="w"> </span><span class="m">03</span>-design.md<span class="w">        </span><span class="c1"># la arquitectura y el contrato</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w"> </span>├──<span class="w"> </span><span class="m">04</span>-tasks.md<span class="w">         </span><span class="c1"># las tareas</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w"> </span>├──<span class="w"> </span>📁<span class="w"> </span>adr/<span class="w">             </span><span class="c1"># las decisiones registradas</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w"> </span>│<span class="w">    </span>├──<span class="w"> </span>ADR-001-feature-package-structure.md
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w"> </span>│<span class="w">    </span>└──<span class="w"> </span>ADR-002-email-uniqueness-strategy.md
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w"> </span>└──<span class="w"> </span>.tdd-state.json<span class="w">     </span><span class="c1"># el estado de cada tarea</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w"> </span>└──<span class="w"> </span>.tdd-state.json<span class="w">     </span><span class="c1"># el estado de cada tarea</span>
 </code></pre></div>
 <h2 id="2-el-diseno-capas-no-hexagonal"><strong>2. El diseño: capas, no hexagonal</strong></h2>
 <p>El <code>03-design.md</code> define la arquitectura. Spring en capas, organizado por feature, con un split entre lo público y lo interno:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>com.geovannycode.sdd.customer
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>com.geovannycode.customer
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w"> </span>├──<span class="w"> </span>📁<span class="w"> </span>api/<span class="w">        </span><span class="c1"># la vitrina: lo que el resto de la app puede usar</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w"> </span>└──<span class="w"> </span>📁<span class="w"> </span>internal/<span class="w">   </span><span class="c1"># la bodega: la implementacion, escondida</span>
 </code></pre></div>
-<p>La <code>api</code> es la vitrina de la tienda, el <code>internal</code> es la bodega. El cliente compra en la vitrina y nunca entra a la bodega. El día que cambies algo de la bodega, nadie afuera se rompe.</p>
+<p>En simple: la <code>api</code> es la vitrina de la tienda, el <code>internal</code> es la bodega. El cliente compra en la vitrina y nunca entra a la bodega. El día que cambies algo de la bodega, nadie afuera se rompe.</p>
 <div class="admonition info">
 <p class="admonition-title">api / internal en Kotlin, un matiz que vale oro en la charla</p>
 <p>En Java, los tipos de <code>internal</code> se esconden con package-private y lo refuerza el compilador. Kotlin no tiene package-private, así que el límite es una convención. ¿Cómo lo volvemos real? El plan registra un ADR que dice: lo convertimos en un test de ArchUnit. Una regla de arquitectura se vuelve un sensor del harness. No es debilidad de Kotlin, es ejemplo de por qué el harness importa.</p>
@@ -668,24 +666,23 @@
 <h2 id="3-las-tareas-en-dos-tracks"><strong>3. Las tareas, en dos tracks</strong></h2>
 <p>El <code>04-tasks.md</code> parte el feature en seis tareas, en dos pistas que pueden ir en paralelo porque el contrato ya está definido.</p>
 <div class="highlight"><span class="filename">04-tasks.md</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gu">## Track A - Backend</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">-</span><span class="w"> </span>T-001 Persistencia: Customer (entidad), CustomerRepository, migracion V1.
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">-</span><span class="w"> </span>T-002 Servicio: CustomerService (api) + CustomerServiceImpl (internal), DTOs.
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">-</span><span class="w"> </span>T-001 Persistencia: Customer (entidad), CustomerRepository, migraciones V1 y V2.
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">-</span><span class="w"> </span>T-002 Servicio: CustomerService (api) + CustomerServiceImpl (internal), DTOs, excepcion.
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">-</span><span class="w"> </span>T-003 HTTP: CustomerController, CustomerExceptionHandler (ProblemDetail).
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="gu">## Track B - Frontend (Vaadin)</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="k">-</span><span class="w"> </span>T-004 Form: layout, modelo y campos de la vista.
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">-</span><span class="w"> </span>T-005 Validacion inline + boton condicional.
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">-</span><span class="w"> </span>T-006 Wiring: enviar al servicio, mapear errores, exito.
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="k">-</span><span class="w"> </span>T-004 Form: MainLayout, AppShellConfig, CustomerFormModel, campos de la vista.
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">-</span><span class="w"> </span>T-005 Validacion inline con el binder.
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">-</span><span class="w"> </span>T-006 Wiring: crear, notificar el exito, limpiar el form.
 </code></pre></div>
-<p>Cada tarea sabe qué archivos toca, qué criterios cubre y cuál es su test. Y el <code>.tdd-state.json</code> arranca con todas en <code>pending</code>:</p>
-<div class="highlight"><span class="filename">.tdd-state.json</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;feature_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-07-09-create-new-customer&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">&quot;active_task&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">&quot;tasks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nt">&quot;T-001&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;phase&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pending&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;acs_covered&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;AC-008&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;AC-011&quot;</span><span class="p">],</span><span class="w"> </span><span class="nt">&quot;depends_on&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="p">}</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="p">}</span>
+<p>Cada tarea mapea a archivos Kotlin reales:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>T-001 -&gt; customer/internal/{Customer, CustomerRepository}.kt + db/migration/V2__create_customers.sql
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>T-002 -&gt; customer/api/{CustomerService, CustomerRequest, CustomerResponse, DuplicateEmailException}.kt
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>         customer/internal/CustomerServiceImpl.kt
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>T-003 -&gt; customer/api/{CustomerController, CustomerExceptionHandler}.kt
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>T-004..T-006 -&gt; customer/ui/{MainLayout, AppShellConfig, CustomerFormModel, CustomerCreateView}.kt
 </code></pre></div>
+<p>Y el <code>.tdd-state.json</code> arranca con todas en <code>pending</code>.</p>
 <ul>
 <li><strong>Ventajas de planear antes de codear</strong><ul>
 <li><strong>Paralelismo real</strong>: con el contrato fijo, el front no espera al backend.</li>
@@ -696,7 +693,7 @@
 </ul>
 <div class="admonition success">
 <p class="admonition-title">Checkpoint de la Fase 2</p>
-<p>Tienes <code>03-design.md</code>, <code>04-tasks.md</code>, los dos ADR y <code>.tdd-state.json</code>. Las seis tareas están en <code>pending</code>. Ya puedes pedirle a Claude que construya la primera.</p>
+<p>Tienes <code>03-design.md</code>, <code>04-tasks.md</code>, los ADR y <code>.tdd-state.json</code>. Las seis tareas están en <code>pending</code>. Ya puedes pedirle a Claude que construya la primera.</p>
 </div>
 <p>En la siguiente fase corremos <code>/build</code> y vemos a Claude generar el backend.</p>
 
