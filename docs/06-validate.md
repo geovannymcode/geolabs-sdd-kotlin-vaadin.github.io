@@ -10,47 +10,64 @@ El feature está construido. Falta cerrar el loop: correr todo el harness de una
 /validate
 ```
 
-El comando levanta Postgres, corre toda la suite, y escribe el reporte. Deberías ver pasar las cinco clases de test:
+El comando levanta Postgres, corre toda la suite y escribe el reporte. Deberías ver pasar las clases de test:
 
 ```text
-CustomerRepositoryIT     persistencia contra Postgres real
-CustomerServiceTest      la logica del servicio, repo mockeado
-CustomerControllerTest   contrato HTTP 201/400/409
-CustomerCreateViewTest   la vista de Vaadin, browserless
-ArchitectureTest         el limite api/internal protegido
+CustomerRepositoryTest             persistencia contra Postgres real
+CustomerServiceImplTest            la logica del servicio, repo mockeado
+CustomerControllerTest             contrato HTTP 201/400/409
+CustomerCreateViewTest             la vista tiene sus campos y su boton
+CustomerCreateViewValidationTest   error inline por cada campo, sin notificacion
+CustomerCreateViewSuccessTest      crea, notifica y limpia
+MainLayoutTest                     la barra, el menu lateral y la ruta raiz
+ArchitectureTest                   el limite api/internal protegido
 ```
 
-Y deja dos artefactos: `07-validation-report.md` con el resultado, y `07a-traceability.md` con la trazabilidad.
+## **2. El guardrail de arquitectura**
 
-## **2. La trazabilidad, lo más bonito de enseñar**
+El `ArchitectureTest` es el que vuelve real la convención api/internal. Fíjate en su forma, con las anotaciones de ArchUnit:
 
-La tabla de trazabilidad conecta cada criterio de aceptación con su test y con el código que lo cumple.
+```kotlin title="ArchitectureTest.kt"
+@AnalyzeClasses(
+    packages = ["com.geovannycode"],
+    importOptions = [ImportOption.DoNotIncludeTests::class]
+)
+class ArchitectureTest {
+    @ArchTest
+    val `classes outside internal must not depend on internal classes`: ArchRule =
+        noClasses()
+            .that().resideOutsideOfPackages("com.geovannycode..internal..")
+            .should().dependOnClassesThat().resideInAPackage("com.geovannycode..internal..")
+            .allowEmptyShould(true)
+}
+```
 
-| AC | Tests | Código de producción |
-|----|-------|----------------------|
-| AC-001, AC-002 | CustomerCreateViewTest | CustomerCreateView, CustomerFormModel |
-| AC-008 | CustomerServiceTest, CustomerRepositoryIT, CustomerControllerTest | Customer, CustomerRepository, CustomerServiceImpl, CustomerController |
-| AC-011 | CustomerServiceTest, CustomerControllerTest, CustomerCreateViewTest | CustomerServiceImpl, CustomerExceptionHandler, CustomerCreateView |
+En simple: Kotlin no te pone la baranda del package-private, así que la pones tú con este test. Como es un test, vive en el harness y corre en cada build.
 
-Es el hilo que conecta lo que pedimos, lo que probamos y lo que construimos. Si alguien pregunta si la regla del email único está cubierta, no abres el código, miras la tabla.
+## **3. La trazabilidad**
 
-## **3. `/review`, la auditoría final**
+Cada criterio de aceptación apunta a su test y al código que lo cumple.
+
+| AC | Tests | Código |
+|----|-------|--------|
+| AC-001 | CustomerCreateViewTest | CustomerCreateView |
+| AC-002..006 | CustomerControllerTest, CustomerCreateViewValidationTest | CustomerRequest, CustomerFormModel |
+| AC-007 | CustomerCreateViewValidationTest | CustomerCreateView |
+| AC-008, AC-009 | CustomerCreateViewSuccessTest, CustomerServiceImplTest | CustomerCreateView, CustomerServiceImpl |
+| AC-010 | CustomerControllerTest | CustomerController |
+| AC-011 | CustomerControllerTest | CustomerExceptionHandler, CustomerRequest |
+| AC-012 | CustomerControllerTest, CustomerServiceImplTest | CustomerExceptionHandler, CustomerServiceImpl |
+| AC-013 | CustomerServiceImplTest, CustomerRepositoryTest | CustomerServiceImpl, Customer |
+
+## **4. `/review`, la auditoría final**
 
 ```bash title="Claude Code"
 /review
 ```
 
-El agente audita el código contra la spec y devuelve un veredicto por gravedad. En este feature sale **APPROVE**, con un par de cosas menores que vale la pena atender:
+El agente audita el código contra la spec y devuelve un veredicto por gravedad. Sale **APPROVE**, y de paso te marca cosas menores para pulir, como acotar el handler con `assignableTypes` o no duplicar validación. Eso es lo que aporta el review: atrapar decisiones antes de que se vuelvan deuda.
 
-```text
-F-R-001 (should-fix): el @RestControllerAdvice debe ir acotado con
-  assignableTypes, para no interceptar otros controllers.
-F-R-002 (should-fix): no duplicar la validacion entre el controller y el servicio.
-```
-
-Eso es lo que aporta el review: no es ceremonia, es atrapar decisiones antes de que se vuelvan deuda.
-
-## **4. Levantar el proyecto**
+## **5. Levantar el proyecto**
 
 Y el momento que esperabas: lo pones a correr.
 
@@ -59,15 +76,15 @@ docker compose up -d
 ./mvnw spring-boot:run
 ```
 
-Abre `http://localhost:8080/create-customer`, llena el formulario y crea un cliente. Deberías ver la notificación verde. Repite el mismo email y verás el error en el campo. Y el REST sigue ahí para clientes externos:
+Abre `http://localhost:8080/` o `http://localhost:8080/crear-cliente`, llena los cinco campos, y crea un cliente. Deberías ver la notificación verde y el formulario limpiarse. El REST sigue ahí para clientes externos:
 
 ```bash
 curl -i -X POST http://localhost:8080/api/customers \
   -H "Content-Type: application/json" \
-  -d '{"firstName":"Ada","lastName":"Lovelace","email":"ada@example.com"}'
+  -d '{"nombre":"Juan García","apellido":"Pérez","email":"juan@example.com","direccion":"Calle 123 #45-67","telefono":"+573001234567"}'
 ```
 
-El primero te da `201 Created`; el segundo, `409 Conflict`.
+El primero te da `201 Created` con el id y el Location. Repite el mismo email y verás `409 Conflict` con un ProblemDetail.
 
 !!! success "Checkpoint final"
     El proyecto corriendo, el feature funcionando por UI y por REST, y en `.specs/` el rastro completo: spec, review, design, tasks, decisiones, validación y trazabilidad. Todo versionado al lado del código.

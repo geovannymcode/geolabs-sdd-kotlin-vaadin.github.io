@@ -1,8 +1,8 @@
 # Taller · SDD con Kotlin, Spring Boot y Vaadin
 
-Guía paso a paso (mkdocs material) para construir el feature "crear cliente" siguiendo el flujo spec-driven, con Spring Boot 4.1 en capas (split api/internal) y Vaadin 25.
+Guía paso a paso (mkdocs material) para construir el feature "crear cliente" siguiendo el flujo spec-driven, con Spring Boot 4.1 en capas (split api/internal) y Vaadin 25. Traducción del ejemplo de Loiane Groner: Java a Kotlin y Angular a Vaadin.
 
-## Ejecutar localmente
+## Servir localmente
 
 ```bash
 pip install mkdocs-material

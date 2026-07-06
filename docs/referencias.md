@@ -2,7 +2,6 @@
 
 ## **Spec-Driven Development**
 
-- **Loiane Groner**: el framework spec-driven y el feature de ejemplo en el que se basa este taller. El `.claude` de este proyecto es su framework traducido a Kotlin + Vaadin.
 - **Simon Martinelli**: AI Unified Process, [unifiedprocess.ai](https://unifiedprocess.ai){:target="_blank"}, la referencia más fuerte para SDD en el mundo Vaadin, incluido el testing browserless.
 
 ## **Stack**
